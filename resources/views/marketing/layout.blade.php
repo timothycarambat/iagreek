@@ -51,6 +51,13 @@
 			<script src="js/skel.min.js"></script>
 			<script src="js/util.js"></script>
 
+			<script src="https://js.stripe.com/v3/"></script>
+		  <script type="text/javascript">
+		    window.pkeys = {
+		      Stripe: "{{$_ENV['STRIPE_KEY']}}",
+		      Places: "{{$_ENV['GOOGLE_PLACES_API']}}"
+		    }
+		  </script>
 			<script src='{{asset("js/app.js")}}'></script>
 
 			<!--[if lte IE 8]><script src="js/ie/respond.min.js"></script><![endif]-->
