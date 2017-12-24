@@ -11,7 +11,7 @@
               <li><a href="/about">About</a></li>
                 @if( !Auth::check() )
                   <li><a href="/register">Sign Up</a></li>
-                  <li><a href="#">Log In</a></li>
+                  <li><a href="/login">Log In</a></li>
                 @else
                   <li><a href="/dashboard"><b>{{Auth::user()->org_name}}</b> Dashboard</a></li>
                   <li><a href="/logout">Logout</a></li>

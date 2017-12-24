@@ -22,6 +22,14 @@ class PagesController extends Controller
       ]);
     }
 
+    public function login(){
+      return view('marketing.login',
+      [
+        'title'=>'Login',
+        'view'=>'login'
+      ]);
+    }
+
     public function register(){
       return view('marketing.register',
       [
