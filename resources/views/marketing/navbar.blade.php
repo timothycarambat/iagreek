@@ -9,13 +9,8 @@
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
-                @if( !Auth::check() )
-                  <li><a href="/register">Sign Up</a></li>
-                  <li><a href="/login">Log In</a></li>
-                @else
-                  <li><a href="/dashboard"><b>{{Auth::user()->org_name}}</b> Dashboard</a></li>
-                  <li><a href="/logout">Logout</a></li>
-                @endif
+              <li><a href="/register">Sign Up</a></li>
+              <li><a href="{{$_ENV['ALT_URL']}}">Log In</a></li>
             </ul>
           </div>
         </li>
