@@ -746,7 +746,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(8);
-module.exports = __webpack_require__(36);
+module.exports = __webpack_require__(37);
 
 
 /***/ }),
@@ -755,9 +755,11 @@ module.exports = __webpack_require__(36);
 
 __webpack_require__(9);
 __webpack_require__(10);
-__webpack_require__(41);
+__webpack_require__(36);
 
 window.view = $('meta[name=view]').attr("content");
+
+__webpack_require__(42);
 
 /***/ }),
 /* 9 */
@@ -31764,16 +31766,6 @@ module.exports = function spread(callback) {
 /* 36 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 37 */,
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */
-/***/ (function(module, exports) {
-
 $(function () {
 
   if ($('#card-number').length > 0) {
@@ -31852,6 +31844,43 @@ function stripeTokenHandler(token, form) {
 
   // Submit the form
   form.submit();
+}
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 38 */,
+/* 39 */,
+/* 40 */,
+/* 41 */,
+/* 42 */
+/***/ (function(module, exports) {
+
+if (window.view === 'register') {
+  $(function () {
+
+    $('#org_size').on('change', function (e) {
+      console.log('running');
+      var size = +$(e.target).val();
+      $('.small-plan,.med-plan,.lg-plan').removeClass('active');
+
+      if (size >= 1 && size <= 100) {
+        $('.small-plan').addClass('active');
+      } else if (size >= 101 && size <= 200) {
+        $('.med-plan').addClass('active');
+      } else if (size >= 201) {
+        $('.lg-plan').addClass('active');
+      } else {
+        $(e.target).val(1);
+        $('.small-plan').addClass('active');
+      }
+    });
+    $('#org_size').change();
+  });
 }
 
 /***/ })

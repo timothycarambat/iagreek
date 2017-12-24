@@ -9,8 +9,13 @@
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
-              <li><a href="/register">Sign Up</a></li>
-              <li><a href="#">Log In</a></li>
+                @if( !Auth::check() )
+                  <li><a href="/register">Sign Up</a></li>
+                  <li><a href="#">Log In</a></li>
+                @else
+                  <li><a href="/dashboard"><b>{{Auth::user()->org_name}}</b> Dashboard</a></li>
+                  <li><a href="/logout">Logout</a></li>
+                @endif
             </ul>
           </div>
         </li>
