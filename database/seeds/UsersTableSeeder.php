@@ -16,45 +16,38 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->truncate();
 
         //Make Admin
-      // $main_user = User::create([
-      //       'name' => "John Example",
-      //       'org' => 'Fresh Org',
-      //       'email' => 'admin@gmail.com',
-      //       'phone' => "9855023261",
-      //       'address' =>"123 Sample Lane",
-      //       'city' => 'Covington',
-      //       'state' =>'LA',
-      //       'zip' => "70435",
-      //       'password' => bcrypt('hello'),
-      //   ]);
-      //
-      //   \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET']);
-      //   $token = \Stripe\Token::create(array(
-      //     "card" => array(
-      //       "number" => "4242424242424242",
-      //       "exp_month" => 12,
-      //       "exp_year" => 2018,
-      //       "cvc" => "314"
-      //     )
-      //   ));
-      //
-      //  $main_user->newSubscription('main','PLAN')->create($token['id'],['email'=>$main_user->email]);
-      //
-      //
-      // $i=0;
-      // while( $i != 10 ){
-      //   DB::table('users')->insert([
-      //         'name' => str_random(10),
-      //         'org' => 'Sample Org',
-      //         'email' => str_random(10).'@gmail.com',
-      //         'phone' => rand(100000000,999999999),
-      //         'address' =>"555 Sample Lane",
-      //         'city' => 'Anywhere',
-      //         'state' =>'NY',
-      //         'zip' => "10000",
-      //         'password' => bcrypt('secret'),
-      //     ]);
-      //     $i++;
-      // }
+      $main_user = User::create([
+        'email' => 'admin@iagreek.com',
+        'password' => bcrypt('hello'),
+        'org_name' => 'Iota Alpha Gamma',
+        'name' => 'Nero Caeser',
+        'phone' => "9855023261",
+        'address' => "500 Rome Way",
+        'city' => "Bologona",
+        'state' =>"CA",
+        'zip' => "77777",
+
+        'billing_name' => 'Nero Caeser',
+        'billing_phone' => "9855023261",
+        'billing_address' => "500 Rome Way",
+        'billing_city' => "Bologona",
+        'billing_state' => "CA",
+        'billing_zip' => "77777",
+        'org_size' => "200",
+        ]);
+
+        \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET']);
+        $token = \Stripe\Token::create(array(
+          "card" => array(
+            "number" => "4242424242424242",
+            "exp_month" => 12,
+            "exp_year" => 2018,
+            "cvc" => "314"
+          )
+        ));
+
+       $main_user->newSubscription('main','iag_med')->create($token['id'],['email'=>$main_user->email]);
+
+
     }
 }
