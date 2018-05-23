@@ -11158,6 +11158,14 @@ body.is-mobile.landing #footer {
   background-color: #1d242a;
 }
 
+.greeting h4 {
+  margin: 0px;
+}
+
+.greeting p {
+  font-size: 15px;
+}
+
 .demo {
   background: #a7a7a7;
 }

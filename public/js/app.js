@@ -746,7 +746,7 @@ module.exports = Cancel;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(8);
-module.exports = __webpack_require__(37);
+module.exports = __webpack_require__(38);
 
 
 /***/ }),
@@ -759,7 +759,7 @@ __webpack_require__(36);
 
 window.view = $('meta[name=view]').attr("content");
 
-__webpack_require__(42);
+__webpack_require__(37);
 
 /***/ }),
 /* 9 */
@@ -31850,16 +31850,6 @@ function stripeTokenHandler(token, form) {
 /* 37 */
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 38 */,
-/* 39 */,
-/* 40 */,
-/* 41 */,
-/* 42 */
-/***/ (function(module, exports) {
-
 if (window.view === 'register') {
   $(function () {
 
@@ -31882,6 +31872,12 @@ if (window.view === 'register') {
     $('#org_size').change();
   });
 }
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

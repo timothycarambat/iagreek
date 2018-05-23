@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Fee;
+use App\SystemVar;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -116,10 +117,14 @@ class RegisterController extends Controller
         ]);
 
         try{
-        $new_user->newSubscription('subscription', Fee::determineNewUserSubType( (int)$data['org_size'] ) )->create($data['stripeToken'],[
-                'email' => $new_user->email
-              ]);
+          # register new user and subscribe them to the appropriate plan w/ trial days.
+          $new_user->newSubscription('subscription', Fee::determineNewUserSubType( (int)$data['org_size'] ) )
+                ->trialDays( SystemVar::trialDays() )
+                ->create($data['stripeToken'],[
+                        'email' => $new_user->email
+                      ]);
         }catch(\Stripe\Error\Card $e) {
+          # should the card present errors; capture them and return to frontend
             $body = $e->getJsonBody();
             $err  = $body['error'];
             Session::flash('failure',$err['message']);
