@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laravel\Cashier\Billable;
 
+use Storage;
+
 class User extends Authenticatable
 {
     use Notifiable;
@@ -45,4 +47,22 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public static function boot() {
+      parent::boot();
+      self::creating(function($model) {
+        $model->avatar = User::makeIdenticon($model->org_name);
+      });
+    }
+
+    # make identicon for new users stored in avatars/
+    private static function makeIdenticon($org_name){
+      $icon = new \Jdenticon\Identicon(array(
+          'size' => 200,
+          'value' => $org_name
+      ));
+      $img_name = str_random(12).".png";
+      Storage::disk($_ENV['FILESYSTEM_DRIVER'])->put("avatars/".$img_name, file_get_contents($icon->getImageDataUri('png')) );
+      return Storage::url("avatars/$img_name");
+    }
 }
