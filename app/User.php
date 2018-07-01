@@ -52,6 +52,18 @@ class User extends Authenticatable
       parent::boot();
       self::creating(function($model) {
         $model->avatar = User::makeIdenticon($model->org_name);
+        User::sendSignUpEmail($model);
+      });
+    }
+
+    public static function sendSignUpEmail($model){
+      $beautymail = app()->make(\Snowfire\Beautymail\Beautymail::class);
+      $beautymail->send('emails.signup',
+        ['model'=>$model, 'org_name'=>$model->org_name],
+        function($message) use($model) {
+          $message
+              ->to($model->email)
+              ->subject("Thanks for Signing Up For IAGREEK!");
       });
     }
 
