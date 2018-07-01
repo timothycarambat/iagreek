@@ -17,8 +17,12 @@
               <li><a href="/about">About</a></li>
               @if( !Auth::check() )
                 <li><a href="/register">Sign Up</a></li>
+                <li><a href="{{$_ENV['ALT_URL']}}">Sign In</a></li>
+              @else
+                <li><a href="{{$_ENV['ALT_URL']}}">Sign Into App</a></li>
+                <li><a href="/logout">Sign Out</a></li>
+
               @endif
-              <li><a href="{{$_ENV['ALT_URL']}}">Log In</a></li>
             </ul>
           </div>
         </li>
