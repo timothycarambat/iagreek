@@ -34,7 +34,7 @@
 						<li><a href="mailto:{{$_ENV['SUPPORT_EMAIL']}}" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
 					</ul>
 					<ul class="copyright">
-						<li>&copy;{{date('Y',strtotime('now'))}} IAGREEK</li><li>Design: <a href="http://industrialobject.com">Industrial Object</a></li>
+						<li>&copy;{{date('Y',strtotime('now'))}} IAGREEK</li>
 					</ul>
 				</footer>
 

@@ -16,7 +16,7 @@
 </div>
 
   <article id="main">
-    <header>
+    <header style="background-image:url('images/register.png');background-size:cover;">
       <h2>Register</h2>
     </header>
     <section class="wrapper style5">
@@ -127,12 +127,12 @@
           <div class="col-xs-12" style="padding:10px 0px 0px 0px">
             <div class="col-xs-4 small-plan">
               <h4 style="margin-bottom:0px;" class="text-center"> Small </h4>
-              <p class="text-center small"> 1-100 active members </p>
-              <h6 class="text-center">$15 / mth </h6>
+              <p class="text-center small"> 50-99 active members </p>
+              <h6 class="text-center">$10 / mth </h6>
             </div>
             <div class="col-xs-4 med-plan">
               <h4 style="margin-bottom:0px;" class="text-center"> Medium </h4>
-              <p class="text-center small"> 101-200 active members </p>
+              <p class="text-center small"> 100-200 active members </p>
               <h6 class="text-center">$20 / mth </h6>
             </div>
             <div class="col-xs-4 lg-plan">

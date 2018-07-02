@@ -31854,13 +31854,12 @@ if (window.view === 'register') {
   $(function () {
 
     $('#org_size').on('change', function (e) {
-      console.log('running');
       var size = +$(e.target).val();
       $('.small-plan,.med-plan,.lg-plan').removeClass('active');
 
-      if (size >= 1 && size <= 100) {
+      if (size >= 1 && size <= 99) {
         $('.small-plan').addClass('active');
-      } else if (size >= 101 && size <= 200) {
+      } else if (size >= 100 && size <= 200) {
         $('.med-plan').addClass('active');
       } else if (size >= 201) {
         $('.lg-plan').addClass('active');

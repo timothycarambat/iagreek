@@ -4,27 +4,30 @@
 
   @include('marketing.navbar')
   <article id="main">
-    <header>
-      <h2>What is this all about?</h2>
+    <header style="background-image: url('/images/messy_desk.jpg')">
+      <h2>What is IAGREEK?</h2>
     </header>
     <section class="wrapper style5">
       <div class="inner">
 
         <h3>What exactly am I signing up for?</h3>
         <p>
-          When you sign up with IAGREEK you are making the choice to create, disseminate, and track your documents.
-          With IAGREEK you able to create all the custom and specialized documents you need when signing on potential new members or maintaing active members for your Greek Organization.
+          Remember when you had your last Social or Event and had to somehow organize the signing of a really simple piece of paper for every member in your Organization?
+          <br>
+          <b>We Do.</b>
+          <br>
+          We know that keeping heads and tails of an organization can be difficult - especially when it comes to keeping track of who's signed what and not having the results
+          be a pile of papers where you best answer for if everyone signed the waiver was <i>Maybe</i>.
           <br><br>
-          In addition to having the documents online and digital, they will also be able to signed digitally. After siging both the responsible party (you!) and whoever the signee was will recieve email reciepts of the document, as well as online here!
-          Keep track of documents needing signatures by sending out mailing campaigns and text notifications as well as viewing who hasnt signed a document yet.
+          With IAGREEK all you need is a single admin account. All you need to do is <a href="/register">Register Your Organization</a>, import your organization roster, make a document, and launch a campaign!
           <br><br>
-          You only need one account to get started and your members do not even need to sign up indvidually! All documents are signed and verifed on our secure server!
+          The rest of the work - getting the signatures, viewing the documents, keeping track of it all over time. We put those metrics right at your fingertips!
         </p>
 
-        <p> Get started with a 15 day trial (if you dont like it dont worry! Youll get all your signed or submitted documents sent to you!)</p>
+        <p> Get started with a {{App\SystemVar::trialDays()}} day trial (if you dont like it dont worry! You can still get all your signed or submitted documents sent to you!)</p>
         <div align='center'>
 
-          <p style="font-style:italic">Pricing is arranged by Organization size and you will automatically be alerted if youre about to switch plans!</p>
+          <p style="font-style:italic">Pricing is arranged by <b>Active</b> Organization size and you will automatically be alerted if you need to switch plans!</p>
         <div class="row" style="text-align: center;">
               <div class="col-md-3 col-sm-6" style='float: none;display: inline-block;text-align: left;'>
                   <div class="pricingTable">
@@ -33,11 +36,11 @@
                           <h3 class="title">Small</h3>
                       </div>
                       <ul class="pricing-content">
-                          <li>50GB Disk Space</li>
-                          <li>50 Email Accounts</li>
-                          <li>50GB Monthly Bandwidth</li>
-                          <li>10 Subdomains</li>
-                          <li>15 Domains</li>
+                          <li>{{App\SystemVar::where('name','org_small')->pluck('value')[0]}} Active Members</li>
+                          <li>Unlimited Documents</li>
+                          <li>Unlimited Campaigns</li>
+                          <li>Reminder Emails</li>
+                          <li>Basic Technical Support</li>
                       </ul>
                       <a href="#" class="pricingTable-signup">Sign Up</a>
                   </div>
@@ -49,11 +52,11 @@
                           <h3 class="title">Medium</h3>
                       </div>
                       <ul class="pricing-content">
-                          <li>60GB Disk Space</li>
-                          <li>60 Email Accounts</li>
-                          <li>60GB Monthly Bandwidth</li>
-                          <li>15 Subdomains</li>
-                          <li>20 Domains</li>
+                        <li>{{App\SystemVar::where('name','org_med')->pluck('value')[0]}} Active Members</li>
+                        <li>Unlimited Documents</li>
+                        <li>Unlimited Campaigns</li>
+                        <li>Reminder Emails</li>
+                        <li>Lvl 2 Technical Support</li>
                       </ul>
                       <a href="#" class="pricingTable-signup">Sign Up</a>
                   </div>
@@ -62,30 +65,22 @@
               <div class="col-md-3 col-sm-6" style='float: none;display: inline-block;text-align: left;'>
                   <div class="pricingTable orange">
                       <div class="pricingTable-header">
-                          <span class="price-value">20<span class="currency">$</span></span>
+                          <span class="price-value">30<span class="currency">$</span></span>
                           <h3 class="title">Large</h3>
                       </div>
                       <ul class="pricing-content">
-                          <li>60GB Disk Space</li>
-                          <li>60 Email Accounts</li>
-                          <li>60GB Monthly Bandwidth</li>
-                          <li>15 Subdomains</li>
-                          <li>20 Domains</li>
+                        <li>{{App\SystemVar::where('name','org_large')->pluck('value')[0]}} Actives</li>
+                        <li>Unlimited Documents</li>
+                        <li>Unlimited Campaigns</li>
+                        <li>Reminder Emails</li>
+                        <li>Tier 1 Technical Support</li>
                       </ul>
                       <a href="#" class="pricingTable-signup">Sign Up</a>
                   </div>
               </div>
           </div>
 
-                  </div>
-
-
-        <hr />
-
-        <h4>Okay, but like, why?</h4>
-        <p> Here will be some information and graphics on how its used.</p>
-
-
+        </div>
 
       </div>
     </section>
