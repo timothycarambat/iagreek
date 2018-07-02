@@ -15,6 +15,7 @@
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
+              <li><a href="/getting_started">Getting Started Guide</a></li>
               @if( !Auth::check() )
                 <li><a href="/register">Sign Up</a></li>
                 <li><a href="{{$_ENV['ALT_URL']}}">Sign In</a></li>

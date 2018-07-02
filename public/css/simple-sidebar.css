@@ -9,7 +9,7 @@ body {
   background-color: #FFF;
 }
 
-.container-fluid > * {
+.container-fluid > *, b {
   color: #000;
 }
 
