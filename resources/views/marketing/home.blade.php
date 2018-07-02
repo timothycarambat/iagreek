@@ -7,7 +7,7 @@
       <section id="banner" style="background-image: url('/images/messy_desk.jpg'); background-size:cover">
         <div class="inner">
           <h2><img src='/images/logo.png' style="height:80px;" /></h2>
-          <p>The Number #1 Greek Document Managment Software.<br />
+          <p>The #1 Greek Document Managment Software.<br />
           <br/>
           Now, let's clean up that desk and make life easy.</p>
           <ul class="actions">
@@ -99,7 +99,7 @@
         <div class="inner">
           <header>
             <h2>Sounds Great?</h2>
-            <p>Get Started Today with a {{App\SystemVar::trialDays()}} day FREE Trial.</p>
+            <p>Get Started Today with a {{App\SystemVar::trialDays()}}-day FREE Trial.</p>
           </header>
           <ul class="actions vertical">
             <li><a href="/register" class="button fit special">Register</a></li>

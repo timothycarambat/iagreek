@@ -116,22 +116,41 @@ class RegisterController extends Controller
               'org_size' => $data['org_size'],
         ]);
 
+        $hasCoupon = !empty($data['coupon']);
+        $couponValid = !empty($data['coupon']) ? RegisterController::isCouponValid($data['coupon']) : false;
+
+        if($hasCoupon && !$couponValid){
+          Session::flash('failure','That Coupon is Not Valid.');
+          $new_user->delete();
+          return Redirect::to('/register')->withInput()->send();
+        }
+
         try{
           # register new user and subscribe them to the appropriate plan w/ trial days.
-          $new_user->newSubscription('subscription', Fee::determineNewUserSubType( (int)$data['org_size'] ) )
-                ->trialDays( SystemVar::trialDays() )
-                ->create($data['stripeToken'],[
-                        'email' => $new_user->email
-                      ]);
+            $new_user->newSubscription('subscription', Fee::determineNewUserSubType( (int)$data['org_size'] ) )
+                  ->trialDays( SystemVar::trialDays() )
+                  ->create($data['stripeToken'],[
+                          'email' => $new_user->email
+                        ]);
         }catch(\Stripe\Error\Card $e) {
           # should the card present errors; capture them and return to frontend
             $body = $e->getJsonBody();
             $err  = $body['error'];
             Session::flash('failure',$err['message']);
-            User::find($new_user->id)->delete();
+            $new_user->delete();
             return Redirect::to('/register')->withInput()->send();
         }
 
         return $new_user;
+    }
+
+    public static function isCouponValid($coupon){
+      \Stripe\Stripe::setApiKey($_ENV['STRIPE_SECRET']);
+      try {
+          $coupon = \Stripe\Coupon::retrieve($coupon);
+          return $coupon->valid;
+      } catch(\Exception $e) {
+          return false;
+      }
     }
 }

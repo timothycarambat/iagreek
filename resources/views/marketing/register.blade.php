@@ -22,6 +22,8 @@
     <section class="wrapper style5">
       <div class="inner">
 
+
+
         @if ( !is_null( session('failure') ) )
           <div class="alert alert-danger text-center" style="font-weight:800">
               <div class="container">
@@ -143,11 +145,22 @@
 
           </div>
 
+
+
           {{ Form::label(null, 'Credit card number',['style'=>'font-weight:800','data-cc-label']) }}
               <div class="form-control" id='card-number'></div>
               <div id="card-errors" role="alert"></div>
 
           <p class="small">Note: We do not ever store credit card information or details. We utilize abstract,safe and PCI compliant card refrences using the <a href='https://stripe.com/'> Stripe API</a></p>
+
+          {{Form::label('coupon', 'Coupon Code:',['style'=>'font-weight:800'])}}
+          {{Form::text('coupon',null,['class' => 'form-control','required' => 'required']) }}
+          <br>
+          @if( App\SystemVar::trialDays() > 0)
+            <div class="alert alert-info text-center" style="font-weight:800">
+              Sign Up Today to get a 15 Day Free Trial!
+            </div>
+          @endif
 
         </div>
 
