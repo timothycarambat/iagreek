@@ -154,7 +154,7 @@
           <p class="small">Note: We do not ever store credit card information or details. We utilize abstract,safe and PCI compliant card refrences using the <a href='https://stripe.com/'> Stripe API</a></p>
 
           {{Form::label('coupon', 'Coupon Code:',['style'=>'font-weight:800'])}}
-          {{Form::text('coupon',null,['class' => 'form-control','required' => 'required']) }}
+          {{Form::text('coupon',null,['class' => 'form-control']) }}
           <br>
           @if( App\SystemVar::trialDays() > 0)
             <div class="alert alert-info text-center" style="font-weight:800">
