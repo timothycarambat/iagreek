@@ -37,4 +37,12 @@ class PagesController extends Controller
         'view'=>'register'
       ]);
     }
+
+   public function gettingStarted(){
+     return view('marketing.getting_started',
+     [
+       'title' => 'Getting Started',
+       'view' => 'getting_started'
+     ]);
+   }
 }

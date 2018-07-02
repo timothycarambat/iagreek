@@ -11,7 +11,7 @@
           <br/>
           Now, let's clean up that desk and make life easy.</p>
           <ul class="actions">
-            <li><a href="#" class="button special">Get Started</a></li>
+            <li><a href="/getting_started" class="button special">Get Started</a></li>
           </ul>
         </div>
         <a href="#one" class="more scrolly">Learn More</a>

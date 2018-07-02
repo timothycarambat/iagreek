@@ -20,3 +20,4 @@ Route::get('/about', "PagesController@about");
 Route::get('/register','PagesController@register');
 // Route::post('/contact/submit', "ContactController@submit");
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+Route::get('/getting_started','PagesController@gettingStarted');
