@@ -19,7 +19,13 @@
 |
 */
 
-require __DIR__.'/../bootstrap/autoload.php';
+$in_production  = is_dir(__DIR__.'/../_iagreek');
+
+if($in_production){
+  require __DIR__.'/../_iagreek/bootstrap/autoload.php';
+}else{
+  require __DIR__.'/../bootstrap/autoload.php';
+}
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +38,11 @@ require __DIR__.'/../bootstrap/autoload.php';
 | the responses back to the browser and delight our users.
 |
 */
-
-$app = require_once __DIR__.'/../bootstrap/app.php';
+if($in_production){
+  $app = require_once __DIR__.'/../_iagreek/bootstrap/app.php';
+}else{
+  $app = require_once __DIR__.'/../bootstrap/app.php';
+}
 
 /*
 |--------------------------------------------------------------------------
