@@ -126,12 +126,21 @@ class RegisterController extends Controller
         }
 
         try{
-          # register new user and subscribe them to the appropriate plan w/ trial days.
+          # register new user and subscribe them to the appropriate plan w/ trial days and coupon if applicable
+          if($hasCoupon){
+            $new_user->newSubscription('subscription', Fee::determineNewUserSubType( (int)$data['org_size'] ) )
+                  ->trialDays( SystemVar::trialDays() )
+                  ->withCoupon($data['coupon'])
+                  ->create($data['stripeToken'],[
+                          'email' => $new_user->email
+                        ]);
+          }else{
             $new_user->newSubscription('subscription', Fee::determineNewUserSubType( (int)$data['org_size'] ) )
                   ->trialDays( SystemVar::trialDays() )
                   ->create($data['stripeToken'],[
                           'email' => $new_user->email
                         ]);
+          }
         }catch(\Stripe\Error\Card $e) {
           # should the card present errors; capture them and return to frontend
             $body = $e->getJsonBody();
