@@ -21,7 +21,7 @@
          <br>
          <p>Now anytime you need any of your organization members to sign a document you can just request the signatures online!</p>
 				 <br>
-         <p>You can always refer to our <a href="/getting_started">Getting Started Documentation to get started</a>.</p>
+         <p>You can always refer to our <a href="{{$_ENV['APP_URL']}}/getting_started">Getting Started Documentation to get started</a>.</p>
 
 				 <br>
 				 <p>Best, <br> IAGREEK Support Team </p>
