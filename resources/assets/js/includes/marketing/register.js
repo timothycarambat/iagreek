@@ -5,11 +5,11 @@ if( window.view === 'register'){
       let size = +$(e.target).val();
       $('.small-plan,.med-plan,.lg-plan').removeClass('active');
 
-        if(size >= 1 && size <= 99){
+        if(size >= 1 && size <= 50){
           $('.small-plan').addClass('active');
-        }else if(size >= 100 && size <= 200){
+        }else if(size >= 51 && size <= 199){
           $('.med-plan').addClass('active');
-        }else if(size >= 201 ){
+        }else if(size >= 200 ){
           $('.lg-plan').addClass('active');
         }else{
           $(e.target).val(1);
@@ -17,9 +17,6 @@ if( window.view === 'register'){
         }
     });
     $('#org_size').change();
-
-
-
 
   })
 }

@@ -118,7 +118,7 @@
           {{Form::label('billing_zip', 'Zip Code:',['style'=>'font-weight:800'])}}
           {{Form::text('billing_zip',null,['class' => 'form-control','placeholder'=>'90210','id'=>'billing_zip','required' => 'required']) }}
 
-          {{Form::label('org_size', 'Organization Size (Estimate):',['style'=>'font-weight:800'])}}
+          {{Form::label('org_size', 'Active Members In Organization (Estimate):',['style'=>'font-weight:800'])}}
           {{Form::number('org_size',null,['class' => 'form-control',
           'min'=>0,'id'=>'org_size',
           'required' => 'required',
@@ -129,17 +129,17 @@
           <div class="col-xs-12" style="padding:10px 0px 0px 0px">
             <div class="col-xs-4 small-plan">
               <h4 style="margin-bottom:0px;" class="text-center"> Small </h4>
-              <p class="text-center small"> 50-99 active members </p>
+              <p style="margin-bottom:0px;" class="text-center small"> < 50 active members </p>
               <h6 class="text-center">$10 / mth </h6>
             </div>
             <div class="col-xs-4 med-plan">
               <h4 style="margin-bottom:0px;" class="text-center"> Medium </h4>
-              <p class="text-center small"> 100-200 active members </p>
+              <p style="margin-bottom:0px;" class="text-center small"> 51-199 active members </p>
               <h6 class="text-center">$20 / mth </h6>
             </div>
             <div class="col-xs-4 lg-plan">
               <h4 style="margin-bottom:0px;" class="text-center"> Large </h4>
-              <p class="text-center small"> 200+ active members </p>
+              <p style="margin-bottom:0px;" class="text-center small"> 200+ active members </p>
               <h6 class="text-center">$30 / mth </h6>
             </div>
 
