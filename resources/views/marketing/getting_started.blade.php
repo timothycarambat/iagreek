@@ -45,14 +45,14 @@
             <h1>Your Dashboard</h1>
 
             <p>
-              The Dashboard is your little own command center. From here you can get a quick overview of your entire organization. Your Dashboard may looking like the above picture.
+              The Dashboard is your little own command center. From here you can get a quick overview of your entire organization. Your Dashboard will look something like the below picture.
               You can click the top cards to quickly view your Organization members, documents, or campaigns.</p>
               <br/>
               <div class="col-xs-12 text-center">
                 <img src="gifs/dash.png" style="width:60%;height:60%" />
               </div>
 
-              <p>If you have any <b>active</b> campaigns then you can quickly view their progress or visit them.</p>
+              <p>If you have any <b>active</b> campaigns then you can quickly view their progress or visit them here as well.</p>
 
           </section>
 
@@ -60,15 +60,15 @@
             <h1>Your Profile</h1>
             <p>
               <a href="{{$_ENV['ALT_URL']}}">Here is where you can log in.</a> <br>
-              If Singing In for the first time. You are going to want to visit your profile configurations first.
+              If signing in for the first time. You are going to want to visit your profile configurations first.
               On this page you can review your basic profile settings, your accounts billing information, and your current subscription status.
             </p>
               <div class="col-xs-12 text-center">
                 <img src="gifs/profile.gif" style="width:60%;height:60%"/>
               </div>
               <br>
-              <p>Additionally, there are settings for email notifications as well as setting your user image and your Document Letterhead.
-              If you update any information on this page, be sure that you submit the edits or they will not be saved.
+              <p>Additionally, there are settings for email notifications as well as setting your user image and your Document Letterhead. Your letterhead should be a small picture or organization logo. It will appear at the top of all your documents!
+              If you update any information on this page, be sure that you submit the edits or they will not be saved!
             </p>
           </section>
 
@@ -95,9 +95,9 @@
             <h1>Your Documents</h1>
             <p>
               Think of Documents more like templates - where you will have a generic document that is used for lets say... waivers on a social. You could type your own verbiage OR just copy paste what you already
-              have. You can even input placeholders that will automatically fill out the signers name in the text or the date they are signing.
+              have. You can even input placeholders that will automatically fill out the signers name or date in the text.
               <br><br>
-              Using a text editor that is much like any you've used before you can be on your way to making mailouts.
+              Using a text editor that is much like any you have used before - you can be on your way to making mailouts.
             </p>
               <div class="col-xs-12 text-center">
                 <img src="gifs/documents.gif" style="width:60%;height:60%"/>
@@ -110,12 +110,12 @@
           <section id="campaigns" class="container-fluid">
             <h1>Your Campaigns</h1>
             <p>
-              Campaigns - as we call them - are simply put a mass mail of signature requests. You first name the campaign, attach and document, and then specify the members who are the primary signers of the document.
-              This could be by tag, position, or even by select members. If there is classification overlap fear not! - we take care of that so we dont blow up all your members inboxes!
+              Campaigns - as we call them - simply put, are a mass mail of E-Signature Requests. You first name the campaign, attach the document/template, and then specify the members who are the primary signers of the document.
+              This could be by tag, position, or even by select members. If there is classification overlap - fear not! - we take care of that so we dont spam all your member's inboxes!
               <br><br>
               If you want to have approvals after the primary signer - you can specify up to <b>3</b> additional signatures after the primary signer.
               <br><br>
-              After Creating a Campaign you can then view its progress as it runs, seeing if all signers have signed, or if there is an approval that needs approving. This data at a glance will also now appear on your dashboard!
+              After Creating a Campaign you can then view its progress as it runs, seeing if all signers have signed, or if there is an approval waiting. This data at a glance will also now appear on your dashboard!
             </p>
               <div class="col-xs-12 text-center">
                 <img src="gifs/campaigns.gif" style="width:60%;height:60%"/>
@@ -127,7 +127,7 @@
               <div class="col-xs-12 text-center">
                 <img src="gifs/campaign_review.gif" style="width:60%;height:60%"/>
               </div>
-              <p><b>Note:</b> Clicking the "trash" icon doesnt wipe your campaign off the face of the earth, it just moves it to your <a href="#archives">Archives</a>, but it does end the campaign and pending requests are halted.</p>
+              <p><b>Note:</b> Clicking the "trash" icon doesnt wipe your campaign off the face of the earth, it just moves it to your <a href="#archives">Archives</a>, but it does end the campaign and pending requests are ended.</p>
           </section>
 
           <section id="archives" class="container-fluid">
@@ -142,9 +142,9 @@
               <a href="{{$_ENV['SIGN_URL']}}"> Go Here to Sign Into the Document Signer Application.</a>
             </p>
             <p>
-              Whether its signing a document as the primary signer or approving a documents that was already signed - the process is one in the same.
+              Whether its signing a document as the primary signer or approving a document that was already signed - the process the same.
               <br><br>
-              Once logged in you will be present documents that you need to sign (as the primary signer) or that need approval.
+              Once logged in you will be presented any documents that you need to sign (as the primary signer) or that need approval.
             </p>
               <br>
                 <div class="col-xs-12 text-center">
@@ -152,7 +152,7 @@
                 </div>
             <p>
               All you need to do it click the "Sign Document" Button and review the content.
-              If you're okay with everything, just click away and carry on with your life - you just signed a document!
+              If you're okay with everything, just click away and carry on - you just signed a document! Wow, that was way more refreshing than trying to hunt someone down for a simple signature - wasn't it?
             </p>
               <div class="col-xs-12 text-center">
                 <img src="gifs/signer.gif" style="width:60%;height:60%"/>

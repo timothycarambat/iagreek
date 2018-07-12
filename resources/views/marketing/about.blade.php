@@ -19,9 +19,9 @@
           We know that keeping heads and tails of an organization can be difficult - especially when it comes to keeping track of who's signed what and not having the results
           be a pile of papers where you best answer for if everyone signed the waiver was <i>Maybe</i>.
           <br><br>
-          With IAGREEK all you need is a single admin account. All you need to do is <a href="/register">Register Your Organization</a>, import your organization roster, make a document, and launch a campaign!
+          With IAGREEK all you need is a single admin account. Then <a href="/register">Register Your Organization</a>, import your organization roster, make a document, and launch a campaign!
           <br><br>
-          The rest of the work - getting the signatures, viewing the documents, keeping track of it all over time. We put those metrics right at your fingertips!
+          The rest of the work - getting the signatures, viewing the documents, keeping track of it all over time. We put those metrics right at your fingertips! The signed document PDF's are always available for you to download and view - anytime.
         </p>
 
         <p> Get started with a {{App\SystemVar::trialDays()}} day trial (if you dont like it dont worry! You can still get all your signed or submitted documents sent to you!)</p>
@@ -56,7 +56,7 @@
                         <li>Unlimited Documents</li>
                         <li>Unlimited Campaigns</li>
                         <li>Reminder Emails</li>
-                        <li>Lvl 2 Technical Support</li>
+                        <li>Adv. Technical Support</li>
                       </ul>
                       <a href="#" class="pricingTable-signup">Sign Up</a>
                   </div>

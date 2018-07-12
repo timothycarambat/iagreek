@@ -7,9 +7,9 @@
       <section id="banner" style="background-image: url('/images/messy_desk.jpg'); background-size:cover">
         <div class="inner">
           <h2><img src='/images/logo.png' style="height:80px;" /></h2>
-          <p>The #1 Greek Document Managment Software.<br />
+          <p>Premier Greek Life E-Sign and Organization Managment Software.<br />
           <br/>
-          Now, let's clean up that desk and make life easy.</p>
+          Now, let's clean up that filing cabinet and make life less cluttered.</p>
           <ul class="actions">
             <li><a href="/getting_started" class="button special">Get Started</a></li>
           </ul>
@@ -41,19 +41,19 @@
         <section class="spotlight">
           <div class="image"><img src="images/members.PNG" alt="" /></div><div class="content">
             <h2>Track Your Entire Organization</h2>
-            <p>Track Members by the position, status, or customizable tags. Update Organization by Excel upload or one-by-one!</p>
+            <p>Track Members by the position, status, or customizable tags. Update your organization by Excel upload or one-by-one!</p>
           </div>
         </section>
         <section class="spotlight">
           <div class="image"><img src="images/document.PNG" alt="" /></div><div class="content">
             <h2>Make Custom Documents</h2>
-            <p>Custom Type or Copy + Paste Text to create a customizable document.</p>
+            <p>Custom Type or Copy + Paste Text to create a document template for <br> E-Signatures.</p>
           </div>
         </section>
         <section class="spotlight">
           <div class="image"><img src="images/campaign.PNG" alt="" /></div><div class="content">
             <h2>Track Signatures</h2>
-            <p>Check Signature Requests over time and send reminders when needed.</p>
+            <p>Mass Mail and Check E-Signatures that you need.</p>
           </div>
         </section>
       </section>
@@ -68,18 +68,18 @@
           <ul class="features">
             <li class="icon fa-user-plus">
               <h3>Add Members to your Organization</h3>
-              <p>Download and reupload our roster template to bulk add & update members. Or add members one by one. Any new active members will recieve account registration emails so they can sign documents.</p>
+              <p>Download, fill and re-upload our roster template to add & update members. Or add members one by one. Any new active members will recieve account registration emails so they can sign documents.</p>
             </li>
             <li class="icon fa-file-text-o">
               <h3>Create A Document</h3>
-              <p>Using a text editor layout your familar with, you can create a custom document. Use placeholder values in the text body to prefill the main signer's name.</p>
+              <p>Using a familar text editor layout, you can create a custom document. Use placeholder values in the text body to prefill information - like the signer's name or the date.</p>
             </li>
             <li class="icon fa-tasks">
               <h3>Create A Campaign</h3>
-              <p>Start a Campaign by naming it, setting a deadline, and attaching a document that will be the template which members will sign.</p>
+              <p>Start a Campaign by naming it, setting a deadline, and attaching a document that will be the template which members will E-sign.</p>
             </li>
             <li class="icon fa-user">
-              <h3>Select Who needs to Sign</h3>
+              <h3>Choose Who needs to Sign</h3>
               <p>Select who needs to sign the document by position, tag, by member or all three! We will sort it out for you!</p>
             </li>
             <li class="icon fa-users">
@@ -88,18 +88,20 @@
             </li>
             <li class="icon fa-paper-plane-o">
               <h3>Launch Campaign</h3>
-              <p>You're Done! Launch the campaign and you have all the metrics you need at your fingertips! Send reminders to nudge those who still havent signed as a friendly reminder.</p>
+              <p>You're Done! Launch the campaign and you have all the metrics you need at your fingertips! Send reminders to nudge those who still havent signed as a friendly reminder.
+              </p>
             </li>
           </ul>
+          <h4>Now sit back and relax! <br>Your E-Signed documents will become available to you when completed!</h4>
         </div>
       </section>
 
     <!-- CTA -->
-      <section id="cta" class="wrapper style4" style="background-image: url('images/clean_office_desk.png')">
+      <section id="cta" class="wrapper style4" style="background-image: url('images/clean_office_desk.png'); background-size: cover;">
         <div class="inner">
           <header>
-            <h2>Sounds Great?</h2>
-            <p>Get Started Today with a {{App\SystemVar::trialDays()}}-day FREE Trial.</p>
+            <h2>Sounds Great, Right?</h2>
+            <p style="background-color: rgba(0,0,0,0.7); padding:10px; border-radius:10px;">Get Started Today with a {{App\SystemVar::trialDays()}}-day FREE Trial.</p>
           </header>
           <ul class="actions vertical">
             <li><a href="/register" class="button fit special">Register</a></li>
