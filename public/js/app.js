@@ -31814,6 +31814,11 @@ $(function () {
     var form = $('[data-card-submit]');
     form.on('submit', function (event) {
       $('#processing').modal('show');
+      // if Trial Only is enabled skip Stripe Check.
+      if ($('#trialOnly').is(':checked')) {
+        return;
+      }
+
       event.preventDefault();
 
       stripe.createToken(card).then(function (result) {
@@ -31869,6 +31874,16 @@ if (window.view === 'register') {
       }
     });
     $('#org_size').change();
+
+    $('#trialOnly').on('click', function (e) {
+      if ($(e.target).is(':checked')) {
+        $('[data-cc-block]').hide(300);
+        $('[data-trial-block]').show(300);
+      } else {
+        $('[data-cc-block]').show(300);
+        $('[data-trial-block]').hide(300);
+      }
+    });
   });
 }
 
