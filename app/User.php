@@ -37,6 +37,7 @@ class User extends Authenticatable
       "billing_state",
       "billing_zip",
       "org_size",
+      "trial_ends_at",
     ];
 
     /**
