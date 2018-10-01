@@ -46,6 +46,12 @@
           </div>
           @endif
 
+          @if( App\SystemVar::trialDays() > 0)
+            <div class="alert alert-info text-center" style="margin-top: 20px;font-weight:800">
+              Start With {{App\SystemVar::trialDays()}} Days Free On Us !
+            </div>
+          @endif
+
         <h2>Sign Up</h2>
 
         {!! Form::open(['url' => 'register','data-card-submit']) !!}
@@ -126,7 +132,7 @@
           ]) }}
 
 
-          <div class="col-xs-12" style="padding:10px 0px 0px 0px">
+          <div class="col-xs-12" style="padding:10px 0px 30px 0px">
             <div class="col-xs-4 small-plan">
               <h4 style="margin-bottom:0px;" class="text-center"> Small </h4>
               <p style="margin-bottom:0px;" class="text-center small"> < 50 active members </p>
@@ -142,32 +148,43 @@
               <p style="margin-bottom:0px;" class="text-center small"> 200+ active members </p>
               <h6 class="text-center">$30 / mth </h6>
             </div>
+          </div>
 
+          <div class="form-check">
+            <input name='trialOnly' type="checkbox" class="form-check-input" id='trialOnly'>
+            <label class="form-check-label" for="trialOnly">Sign Up without Card*</label>
           </div>
 
 
 
-          {{ Form::label(null, 'Credit card number',['style'=>'font-weight:800','data-cc-label']) }}
-              <div class="form-control" id='card-number'></div>
-              <div id="card-errors" role="alert"></div>
+          <div style="margin-top:10px" data-cc-block >
+            {{ Form::label(null, 'Credit card number',['style'=>'font-weight:800','data-cc-label']) }}
+                <div class="form-control" id='card-number'></div>
+                <div id="card-errors" role="alert"></div>
+            <p class="small">Note: We do not ever store credit card information or details. We utilize abstract,safe and PCI compliant card refrences using the <a href='https://stripe.com/'> Stripe API</a></p>
 
-          <p class="small">Note: We do not ever store credit card information or details. We utilize abstract,safe and PCI compliant card refrences using the <a href='https://stripe.com/'> Stripe API</a></p>
+            {{Form::label('coupon', 'Coupon Code:',['style'=>'font-weight:800'])}}
+            {{Form::text('coupon',null,['class' => 'form-control']) }}
+            <br>
 
-          {{Form::label('coupon', 'Coupon Code:',['style'=>'font-weight:800'])}}
-          {{Form::text('coupon',null,['class' => 'form-control']) }}
-          <br>
-          @if( App\SystemVar::trialDays() > 0)
-            <div class="alert alert-info text-center" style="font-weight:800">
-              Sign Up Today to get a 15 Day Free Trial!
-            </div>
-          @endif
+          </div>
+
+          <div style="margin-top:10px; display:none" data-trial-block >
+            <p style="margin-bottom:0px" class="small">*If Signing up without a card you and your Organization will have limited access to the application in the following ways.</p>
+            <ul style="list-style: none">
+              <li>- Up to 10 Additional Members Limit in your roster</li>
+              <li>- Up to 3 Custom Documents</li>
+              <li>- Up to 3 Campaigns (Active or Inactive)</li>
+            </ul>
+          </div>
+
 
         </div>
 
 
         <div class="row">
           <div class="pull-left">
-            <a class=" btn button" style="margin:10px" href="/home">Cancel</a>
+            <a class=" btn button" style="margin:10px" href="/">Cancel</a>
             {{Form::submit('Register',['class'=>'button special','style'=>'margin-top:10px;margin-bottom:10px;'])}}
           </div>
         </div>

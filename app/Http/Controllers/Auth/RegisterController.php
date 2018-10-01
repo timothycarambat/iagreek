@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 use Session;
 use Redirect;
+use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -72,7 +73,7 @@ class RegisterController extends Controller
           'billing_zip' => 'required|digits:5',
 
           'org_size' => 'required|numeric',
-          'stripeToken' => 'required'
+          'stripeToken' => 'required_unless:trialOnly,"on"'
       ]);
 
       if($validator){
@@ -91,8 +92,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-      // dd($data);
-        Session::flash('info', 'Welcome to IAgreek! For the best tailored expierence, you should make sure all fields below are completed.');
+        Session::flash('info', 'Welcome to IAgreek! To get started open up the menu and select "Sign Into App" ');
         $new_user =  User::create([
               'email' => $data['email'],
               'password' => bcrypt($data['password']),
@@ -114,7 +114,12 @@ class RegisterController extends Controller
               'billing_zip' => $data['billing_zip'],
 
               'org_size' => $data['org_size'],
+
+              'trial_ends_at' => $data['trialOnly'] === "on" ? Carbon::now()->addDays(SystemVar::trialDays()) : null,
         ]);
+
+        // if signed up without card then we just carry on
+        if( $data['trialOnly'] === "on" ){ return $new_user;}
 
         $hasCoupon = !empty($data['coupon']);
         $couponValid = !empty($data['coupon']) ? RegisterController::isCouponValid($data['coupon']) : false;

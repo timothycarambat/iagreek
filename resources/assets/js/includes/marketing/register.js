@@ -18,5 +18,16 @@ if( window.view === 'register'){
     });
     $('#org_size').change();
 
+    $('#trialOnly').on('click', function(e){
+      if( $(e.target).is(':checked') ) {
+        $('[data-cc-block]').hide(300)
+        $('[data-trial-block]').show(300)
+      } else {
+        $('[data-cc-block]').show(300)
+        $('[data-trial-block]').hide(300)
+      }
+    })
+
+
   })
 }

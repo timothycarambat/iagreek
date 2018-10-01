@@ -46,6 +46,9 @@ $(function(){
     var form = $('[data-card-submit]');
     form.on('submit', function(event) {
       $('#processing').modal('show');
+      // if Trial Only is enabled skip Stripe Check.
+      if( $('#trialOnly').is(':checked') ){return}
+
       event.preventDefault();
 
       stripe.createToken(card).then(function(result) {
