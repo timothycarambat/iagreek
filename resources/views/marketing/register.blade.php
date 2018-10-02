@@ -9,7 +9,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-body text-center">
-              <h5 style="padding:0px; color:#000"><i class="fa fa-cog fa-spin"></i> Rushing your account to IAG!</h5>
+              <h1 style="color:#000"><i style='vertical-align: middle;' class="fa fa-cog fa-spin fa-3x"></i> Rushing your account!</h1>
             </div>
         </div>
     </div>

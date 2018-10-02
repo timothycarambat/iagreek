@@ -92,7 +92,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        Session::flash('info', 'Welcome to IAgreek! To get started open up the menu and select "Sign Into App" ');
+        Session::flash('info', 'Welcome to IAgreek! </br>
+         To get started visit out <a style="color:#42A084" href="getting_started"> our Getting Started Guide </a>
+        or
+         open up the menu and select "Sign Into App".
+         ');
         $new_user =  User::create([
               'email' => $data['email'],
               'password' => bcrypt($data['password']),
@@ -115,11 +119,11 @@ class RegisterController extends Controller
 
               'org_size' => $data['org_size'],
 
-              'trial_ends_at' => $data['trialOnly'] === "on" ? Carbon::now()->addDays(SystemVar::trialDays()) : null,
+              'trial_ends_at' => array_key_exists('trialOnly', $data) && $data['trialOnly'] === "on" ? Carbon::now()->addDays(SystemVar::trialDays()) : null,
         ]);
 
         // if signed up without card then we just carry on
-        if( $data['trialOnly'] === "on" ){ return $new_user;}
+        if( array_key_exists('trialOnly', $data) && $data['trialOnly'] === "on" ){ return $new_user;}
 
         $hasCoupon = !empty($data['coupon']);
         $couponValid = !empty($data['coupon']) ? RegisterController::isCouponValid($data['coupon']) : false;

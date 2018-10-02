@@ -8,12 +8,12 @@
       <!-- Flash Info -->
       <div class="col-xs-12" style="position:fixed;z-index:1;margin-top:10px">
         <div class="col-xs-offset-3 col-xs-6">
-          <div class="alert alert-success text-center" style="font-weight:800">
+          <div class="alert alert-success text-center">
               <div>
                   <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                       <i class="nc-icon nc-simple-remove"></i>
                   </button>
-                  {{ session('info') }}
+                  {!! session('info') !!}
               </div>
           </div>
         </div>
