@@ -28,7 +28,7 @@
           <br/>
           Now, let's clean up that filing cabinet and make life less cluttered.</p>
           <ul class="actions">
-            <li><a href="/getting_started" class="button special">Get Started</a></li>
+            <li><a href="/getting_started" class="button special">Getting Started Guide</a></li>
           </ul>
         </div>
         <a href="#one" class="more scrolly">Learn More</a>
@@ -122,7 +122,7 @@
           </header>
           <ul class="actions vertical">
             <li><a href="/register" class="button fit special">Register</a></li>
-            <li><a href="/getting_started" class="button fit">Guide</a></li>
+            <li><a href="/getting_started" class="button fit default">Guide</a></li>
           </ul>
         </div>
       </section>

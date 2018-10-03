@@ -35,7 +35,7 @@
 					</ul>
 					<ul class="copyright">
 						<li>
-							<a href="/about">ABOUT US</a>
+							<a href="/about">ABOUT IAG</a>
 							<a href="/getting_started">Getting Started</a>
 						</li>
 						<br>

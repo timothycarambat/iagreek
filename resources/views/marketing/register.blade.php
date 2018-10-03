@@ -64,7 +64,8 @@
           {{Form::label('password', 'Password:',['style'=>'font-weight:800'])}}
           {{Form::password('password',['class' => 'form-control','required' => 'required']) }}
 
-          {{Form::label('password_confirmation', 'Confirm Password:',['style'=>'font-weight:800'])}}
+          {{Form::label('password_confirmation', 'Confirm Password:',['style'=>'font-weight:800;margin:0px;'])}}
+          <p class="small" style="margin: 0px;font-style: italic;color: #8e8e8e;">*must be at least 8 characters</p>
           {{Form::password('password_confirmation',['class' => 'form-control','required' => 'required']) }}
 
           <br><h6><u>Account Information</u></h6>
