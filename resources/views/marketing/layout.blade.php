@@ -11,6 +11,14 @@
 		<meta name="csrf-token" content="{{ csrf_token() }}">
 		<meta name="view" content="{{ $view }}">
 
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-66498419-3"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-66498419-3');
+		</script>
 
 
 		<!--[if lte IE 8]><script src="js/ie/html5shiv.js"></script><![endif]-->
