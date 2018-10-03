@@ -3,12 +3,12 @@
 This application is for the full web application that manages the documents and signing campaigns for Greek Life Organizations.
 
 **Quick Brief:**
-Web Server: Apache/Nginx
-Framework: Laravel 5.4.*
-Cloud Storage: AWS S3
-Mail: Self-Hosted & Mailtrap for Development
-Payment: Stripe
-RDBMS: Postgres >= 9.6
+ - Web Server: Apache/Nginx
+ - Framework: Laravel 5.4.*
+ - Cloud Storage: AWS S3
+ - Mail: Self-Hosted & Mailtrap for Development
+ - Payment: Stripe
+ - RDBMS: MySQL MariaDB
 
 **BIG NOTE:**
 The tables for `iagreek` marketing are made with the `iagreek_app` repo. Since both applications are needed to run concurrently to have the full ecosystem, they should both talk to the tables that are made in the application for now.
